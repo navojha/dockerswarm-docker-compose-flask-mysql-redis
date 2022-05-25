@@ -2,7 +2,7 @@
 
 This repository contains flask application code. We can deploy The entire stack - MySQL, Redis, and the backend application using docker swarm .
 Once we execute this though docker stack deploy, it will create entire stack with four application replicas, Redis and MySQL database.
-We can scale this application as per requirement. 
+We can scale this web application by launching multiple backend application containers. 
           
     Backend application
         Model the following in the primary database
@@ -68,7 +68,7 @@ We can scale this application as per requirement.
     jl75g73wsi39   mydeployment_redis.1   redis:6.2.7-alpine   docker-desktop   Running         Running about a minute ago             
 
     $docker service scale mydeployment_app=20
-    
+
     mydeployment_app scaled to 20
     overall progress: 20 out of 20 tasks 
     1/20: running   [==================================================>] 
