@@ -41,9 +41,9 @@ We can scale this web application by launching multiple backend application cont
 ### Local deployment
      The entire stack - MySQL, Redis, and the backend application - will be deployable using docker swarn
 
-    $docker-compose build
+    docker-compose build
 
-    $docker stack deploy -c docker-compose.yml mydeployment
+    docker stack deploy -c docker-compose.yml mydeployment
 
     Creating network mydeployment_default
     Creating service mydeployment_app
@@ -51,14 +51,14 @@ We can scale this web application by launching multiple backend application cont
     Creating service mydeployment_mysql
 
 
-    $docker service ls
+    docker service ls
 
     ID             NAME                 MODE         REPLICAS   IMAGE                PORTS
     o9ws1rojddga   mydeployment_app     replicated   4/4        flask-redis:1.0      *:8083->8083/tcp
     t2ba9tbdqzcs   mydeployment_mysql   replicated   1/1        mysql:8.0            
     8if9cwkp02z8   mydeployment_redis   replicated   1/1        redis:6.2.7-alpine   
 
-    $docker stack ps mydeployment
+    docker stack ps mydeployment
 
     ID             NAME                   IMAGE                NODE             DESIRED STATE   CURRENT STATE                ERROR     PORTS
     i1lqikc29tya   mydeployment_app.1     flask-redis:1.0      docker-desktop   Running         Running about a minute ago             
@@ -68,7 +68,7 @@ We can scale this web application by launching multiple backend application cont
     wo8vyr5n7w3i   mydeployment_mysql.1   mysql:8.0            docker-desktop   Running         Running 44 seconds ago                 
     jl75g73wsi39   mydeployment_redis.1   redis:6.2.7-alpine   docker-desktop   Running         Running about a minute ago             
 
-    $docker service scale mydeployment_app=20
+    docker service scale mydeployment_app=20
 
     mydeployment_app scaled to 20
     overall progress: 20 out of 20 tasks 
@@ -116,7 +116,7 @@ This will create the player table.
 
 #### Logs
 
-    $docker service logs -f mydeployment_app
+    docker service logs -f mydeployment_app
 
     mydeployment_app.3.o2vpwhaninnf@docker-desktop    |  * Serving Flask app 'app.py' (lazy loading)
     mydeployment_app.3.o2vpwhaninnf@docker-desktop    |  * Environment: development
@@ -159,7 +159,7 @@ This will create the player table.
     mydeployment_app.4.vad0irgl6weh@docker-desktop    |  * Debugger is active!
     mydeployment_app.4.vad0irgl6weh@docker-desktop    |  * Debugger PIN: 478-915-004
 
-    $docker service logs -f mydeployment_mysql
+    docker service logs -f mydeployment_mysql
 
     mydeployment_mysql.1.wo8vyr5n7w3i@docker-desktop    | 2022-05-25 12:50:49+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.29-1debian10 started.
     mydeployment_mysql.1.wo8vyr5n7w3i@docker-desktop    | 2022-05-25 12:50:49+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
@@ -204,7 +204,7 @@ This will create the player table.
     mydeployment_mysql.1.wo8vyr5n7w3i@docker-desktop    | 2022-05-25T12:50:59.475519Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.29'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
     mydeployment_mysql.1.wo8vyr5n7w3i@docker-desktop    | 2022-05-25T12:50:59.475520Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
 
-    $docker service logs -f mydeployment_redis
+    docker service logs -f mydeployment_redis
 
     mydeployment_redis.1.jl75g73wsi39@docker-desktop    | 1:C 25 May 2022 12:50:32.802 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
     mydeployment_redis.1.jl75g73wsi39@docker-desktop    | 1:C 25 May 2022 12:50:32.802 # Redis version=6.2.7, bits=64, commit=00000000, modified=0, pid=1, just started
