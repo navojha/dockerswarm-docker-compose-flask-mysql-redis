@@ -1,6 +1,6 @@
-# Flask Application
+# Web Application
 
-This repository contains flask application code. We can deploy The entire stack - MySQL, Redis, and the backend application using docker swarm .
+This repository contains flask Web application code. We can deploy The entire stack - MySQL, Redis, and the backend application using docker swarm .
 Once we execute this though docker stack deploy, it will create entire stack with four application replicas, Redis and MySQL database.
 We can scale this web application by launching multiple backend application containers. 
 
