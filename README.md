@@ -3,7 +3,11 @@
 This repository contains flask application code. We can deploy The entire stack - MySQL, Redis, and the backend application using docker swarm .
 Once we execute this though docker stack deploy, it will create entire stack with four application replicas, Redis and MySQL database.
 We can scale this web application by launching multiple backend application containers. 
-          
+
+### Architecture
+![Architecture](https://github.com/navojha/dockerswarm-docker-compose-flask-mysql-redis/blob/main/Screenshots/Architecture_docker_Swarm.png?raw=true)
+
+
     Backend application
         Model the following in the primary database
         i. Identifier
@@ -99,20 +103,20 @@ We can scale this web application by launching multiple backend application cont
 ##### Create Player Table
 localhost:8083
 This will create the player table.
-![VPC Created](https://github.com/navojha/docker-compose-flask-mysql-redis/blob/main/Screenshots/Table_Created.png?raw=true)
+![reate Player Table](https://github.com/navojha/docker-compose-flask-mysql-redis/blob/main/Screenshots/Table_Created.png?raw=true)
 
 ##### Insert records in Player
     localhost:8083/Createplayer
     This End Point will use to enter the Player data.
-![VPC Created](https://github.com/navojha/docker-compose-flask-mysql-redis/blob/main/Screenshots/Create_player.png?raw=true)
+![Insert records in Player](https://github.com/navojha/docker-compose-flask-mysql-redis/blob/main/Screenshots/Create_player.png?raw=true)
 
 #### Player Created
-![VPC Created](https://github.com/navojha/docker-compose-flask-mysql-redis/blob/main/Screenshots/Player_created.png?raw=true)
+![Player Created](https://github.com/navojha/docker-compose-flask-mysql-redis/blob/main/Screenshots/Player_created.png?raw=true)
 
 #### Get Player Detail
     http://localhost:8083/Getplayer
     This endpoint will Retrieve Identifier and Name from the MySQL and Retrieve Gold from Redis. 
-![VPC Created](https://github.com/navojha/docker-compose-flask-mysql-redis/blob/main/Screenshots/Get_Player.png?raw=true)
+![Get Player Detail](https://github.com/navojha/docker-compose-flask-mysql-redis/blob/main/Screenshots/Get_Player.png?raw=true)
 
 #### Logs
 
