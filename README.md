@@ -112,3 +112,47 @@ This will create the player table.
     http://localhost:8083/Getplayer
     This endpoint will Retrieve Identifier and Name from the MySQL and Retrieve Gold from Redis. 
 ![VPC Created](https://github.com/navojha/docker-compose-flask-mysql-redis/blob/main/Screenshots/Get_Player.png?raw=true)
+
+#### Logs
+
+    docker service logs -f mydeployment_app
+    mydeployment_app.3.o2vpwhaninnf@docker-desktop    |  * Serving Flask app 'app.py' (lazy loading)
+    mydeployment_app.3.o2vpwhaninnf@docker-desktop    |  * Environment: development
+    mydeployment_app.3.o2vpwhaninnf@docker-desktop    |  * Debug mode: on
+    mydeployment_app.3.o2vpwhaninnf@docker-desktop    |  * Running on all addresses (0.0.0.0)
+    mydeployment_app.3.o2vpwhaninnf@docker-desktop    |    WARNING: This is a development server. Do not use it in a production deployment.
+    mydeployment_app.3.o2vpwhaninnf@docker-desktop    |  * Running on http://127.0.0.1:8083
+    mydeployment_app.3.o2vpwhaninnf@docker-desktop    |  * Running on http://192.168.112.6:8083 (Press CTRL+C to quit)
+    mydeployment_app.3.o2vpwhaninnf@docker-desktop    |  * Restarting with stat
+    mydeployment_app.3.o2vpwhaninnf@docker-desktop    |  * Debugger is active!
+    mydeployment_app.3.o2vpwhaninnf@docker-desktop    |  * Debugger PIN: 434-925-921
+    mydeployment_app.2.o8crjgzsoqqo@docker-desktop    |  * Serving Flask app 'app.py' (lazy loading)
+    mydeployment_app.2.o8crjgzsoqqo@docker-desktop    |  * Environment: development
+    mydeployment_app.2.o8crjgzsoqqo@docker-desktop    |  * Debug mode: on
+    mydeployment_app.2.o8crjgzsoqqo@docker-desktop    |  * Running on all addresses (0.0.0.0)
+    mydeployment_app.2.o8crjgzsoqqo@docker-desktop    |    WARNING: This is a development server. Do not use it in a production deployment.
+    mydeployment_app.2.o8crjgzsoqqo@docker-desktop    |  * Running on http://127.0.0.1:8083
+    mydeployment_app.2.o8crjgzsoqqo@docker-desktop    |  * Running on http://192.168.112.5:8083 (Press CTRL+C to quit)
+    mydeployment_app.2.o8crjgzsoqqo@docker-desktop    |  * Restarting with stat
+    mydeployment_app.2.o8crjgzsoqqo@docker-desktop    |  * Debugger is active!
+    mydeployment_app.2.o8crjgzsoqqo@docker-desktop    |  * Debugger PIN: 116-846-116
+    mydeployment_app.1.i1lqikc29tya@docker-desktop    |  * Serving Flask app 'app.py' (lazy loading)
+    mydeployment_app.1.i1lqikc29tya@docker-desktop    |  * Environment: development
+    mydeployment_app.1.i1lqikc29tya@docker-desktop    |  * Debug mode: on
+    mydeployment_app.1.i1lqikc29tya@docker-desktop    |  * Running on all addresses (0.0.0.0)
+    mydeployment_app.1.i1lqikc29tya@docker-desktop    |    WARNING: This is a development server. Do not use it in a production deployment.
+    mydeployment_app.1.i1lqikc29tya@docker-desktop    |  * Running on http://127.0.0.1:8083
+    mydeployment_app.1.i1lqikc29tya@docker-desktop    |  * Running on http://192.168.112.3:8083 (Press CTRL+C to quit)
+    mydeployment_app.1.i1lqikc29tya@docker-desktop    |  * Restarting with stat
+    mydeployment_app.1.i1lqikc29tya@docker-desktop    |  * Debugger is active!
+    mydeployment_app.1.i1lqikc29tya@docker-desktop    |  * Debugger PIN: 975-106-412
+    mydeployment_app.4.vad0irgl6weh@docker-desktop    |  * Serving Flask app 'app.py' (lazy loading)
+    mydeployment_app.4.vad0irgl6weh@docker-desktop    |  * Environment: development
+    mydeployment_app.4.vad0irgl6weh@docker-desktop    |  * Debug mode: on
+    mydeployment_app.4.vad0irgl6weh@docker-desktop    |  * Running on all addresses (0.0.0.0)
+    mydeployment_app.4.vad0irgl6weh@docker-desktop    |    WARNING: This is a development server. Do not use it in a production deployment.
+    mydeployment_app.4.vad0irgl6weh@docker-desktop    |  * Running on http://127.0.0.1:8083
+    mydeployment_app.4.vad0irgl6weh@docker-desktop    |  * Running on http://192.168.112.4:8083 (Press CTRL+C to quit)
+    mydeployment_app.4.vad0irgl6weh@docker-desktop    |  * Restarting with stat
+    mydeployment_app.4.vad0irgl6weh@docker-desktop    |  * Debugger is active!
+    mydeployment_app.4.vad0irgl6weh@docker-desktop    |  * Debugger PIN: 478-915-004
