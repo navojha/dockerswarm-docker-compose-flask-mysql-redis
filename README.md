@@ -32,7 +32,7 @@ We can scale this web application by launching multiple backend application cont
     Docker latest version should be installed on local machine.
 #### Clone the repository 
     git clone https://github.com/navojha/docker-compose-flask-mysql-redis.git
-    cd docker-compose-flask-mysql-redis
+    cd dockerswarm-docker-compose-flask-mysql-redis
 
     $tree
      .   
