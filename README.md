@@ -98,6 +98,12 @@ We can scale this web application by launching multiple backend application cont
     20/20: running   [==================================================>] 
     verify: Service converged 
 
+    docker service ls   
+                        
+    ID             NAME                 MODE         REPLICAS   IMAGE                PORTS
+    o9ws1rojddga   mydeployment_app     replicated   20/20      flask-redis:1.0      *:8083->8083/tcp
+    t2ba9tbdqzcs   mydeployment_mysql   replicated   1/1        mysql:8.0            
+    8if9cwkp02z8   mydeployment_redis   replicated   1/1        redis:6.2.7-alpine 
 
 ### Testing
 ##### Create Player Table
