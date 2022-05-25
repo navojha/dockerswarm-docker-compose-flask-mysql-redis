@@ -72,6 +72,9 @@ We can scale this web application by launching multiple backend application cont
     wo8vyr5n7w3i   mydeployment_mysql.1   mysql:8.0            docker-desktop   Running         Running 44 seconds ago                 
     jl75g73wsi39   mydeployment_redis.1   redis:6.2.7-alpine   docker-desktop   Running         Running about a minute ago             
 
+##### Scaleing the web application
+
+
     docker service scale mydeployment_app=20
 
     mydeployment_app scaled to 20
@@ -99,7 +102,7 @@ We can scale this web application by launching multiple backend application cont
     verify: Service converged 
 
     docker service ls   
-                        
+
     ID             NAME                 MODE         REPLICAS   IMAGE                PORTS
     o9ws1rojddga   mydeployment_app     replicated   20/20      flask-redis:1.0      *:8083->8083/tcp
     t2ba9tbdqzcs   mydeployment_mysql   replicated   1/1        mysql:8.0            
