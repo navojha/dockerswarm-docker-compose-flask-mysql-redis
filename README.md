@@ -1,9 +1,8 @@
-
 # Flask Application
 
-This repository contains flask application code. We can deploy it locally using docker-compose.
-Once we execute this though docker-compose it will create three containers - application, Redis and MySQL database.
-This is simple application and does not support scaling part. 
+This repository contains flask application code. We can deploy The entire stack - MySQL, Redis, and the backend application using docker swarm .
+Once we execute this though docker stack deploy, it will create entire stack with four application replicas, Redis and MySQL database.
+We can scale this application as per requirement. 
           
     Backend application
         Model the following in the primary database
@@ -39,16 +38,62 @@ This is simple application and does not support scaling part.
     ├──requirements.txt
     └──templates
 ### Local deployment
-     The entire stack - MySQL, Redis, and the backend application - will be deployable using docker-compose
+     The entire stack - MySQL, Redis, and the backend application - will be deployable using docker swarn
 
-    docker-compose up
+    $docker-compose build
 
-    docker ps
+    $docker stack deploy -c docker-compose.yml mydeployment
 
-    CONTAINER ID   IMAGE                COMMAND                  CREATED         STATUS         PORTS                    NAMES
-    9e5623135a0d   flask-redis:1.0      "/bin/sh -c 'flask r…"   9 minutes ago   Up 9 minutes   0.0.0.0:8083->8083/tcp   docker-compose-flask-mysql-redis_app_1
-    bb7ba8d3402f   mysql:8.0            "docker-entrypoint.s…"   9 minutes ago   Up 9 minutes   3306/tcp, 33060/tcp      docker-compose-flask-mysql-redis_mysql_1
-    06ca82f4cce2   redis:6.2.7-alpine   "docker-entrypoint.s…"   9 minutes ago   Up 9 minutes   6379/tcp                 docker-compose-flask-mysql-redis_redis_1
+    Creating network mydeployment_default
+    Creating service mydeployment_app
+    Creating service mydeployment_redis
+    Creating service mydeployment_mysql
+
+
+    $docker service ls
+
+    ID             NAME                 MODE         REPLICAS   IMAGE                PORTS
+    o9ws1rojddga   mydeployment_app     replicated   4/4        flask-redis:1.0      *:8083->8083/tcp
+    t2ba9tbdqzcs   mydeployment_mysql   replicated   1/1        mysql:8.0            
+    8if9cwkp02z8   mydeployment_redis   replicated   1/1        redis:6.2.7-alpine   
+
+    $docker stack ps mydeployment
+
+    ID             NAME                   IMAGE                NODE             DESIRED STATE   CURRENT STATE                ERROR     PORTS
+    i1lqikc29tya   mydeployment_app.1     flask-redis:1.0      docker-desktop   Running         Running about a minute ago             
+    o8crjgzsoqqo   mydeployment_app.2     flask-redis:1.0      docker-desktop   Running         Running about a minute ago             
+    o2vpwhaninnf   mydeployment_app.3     flask-redis:1.0      docker-desktop   Running         Running about a minute ago             
+    vad0irgl6weh   mydeployment_app.4     flask-redis:1.0      docker-desktop   Running         Running about a minute ago             
+    wo8vyr5n7w3i   mydeployment_mysql.1   mysql:8.0            docker-desktop   Running         Running 44 seconds ago                 
+    jl75g73wsi39   mydeployment_redis.1   redis:6.2.7-alpine   docker-desktop   Running         Running about a minute ago             
+
+    $docker service scale mydeployment_app=20
+    
+    mydeployment_app scaled to 20
+    overall progress: 20 out of 20 tasks 
+    1/20: running   [==================================================>] 
+    2/20: running   [==================================================>] 
+    3/20: running   [==================================================>] 
+    4/20: running   [==================================================>] 
+    5/20: running   [==================================================>] 
+    6/20: running   [==================================================>] 
+    7/20: running   [==================================================>] 
+    8/20: running   [==================================================>] 
+    9/20: running   [==================================================>] 
+    10/20: running   [==================================================>] 
+    11/20: running   [==================================================>] 
+    12/20: running   [==================================================>] 
+    13/20: running   [==================================================>] 
+    14/20: running   [==================================================>] 
+    15/20: running   [==================================================>] 
+    16/20: running   [==================================================>] 
+    17/20: running   [==================================================>] 
+    18/20: running   [==================================================>] 
+    19/20: running   [==================================================>] 
+    20/20: running   [==================================================>] 
+    verify: Service converged 
+
+
 ### Testing
 ##### Create Player Table
 localhost:8083
