@@ -20,7 +20,7 @@ mysql = MySQL(app)
 def index():
 
     cur = mysql.connection.cursor()
-    cur.execute(''' CREATE TABLE players(identifier varchar(255), name varchar(255) UNIQUE, amountofgold int(11)) ''')
+    cur.execute(''' CREATE TABLE players(identifier varchar(255), name varchar(20) UNIQUE, amountofgold int(11)) ''')
     mysql.connection.commit()
     cur.close()
     return 'Player Table create !'
