@@ -5,7 +5,7 @@ Once we execute this though docker stack deploy, it will create entire stack wit
 We can scale this web application by launching multiple backend application containers. 
 
 ### Architecture
-![Architecture](https://github.com/navojha/dockerswarm-docker-compose-flask-mysql-redis/blob/main/Screenshots/Architecture_docker_Swarm.png?raw=true)
+![Architecture](https://github.com/navojha/dockerswarm-docker-compose-flask-mysql-redis/blob/main/Screenshots/Architecture.jpg?raw=true)
 
 
     Backend application
