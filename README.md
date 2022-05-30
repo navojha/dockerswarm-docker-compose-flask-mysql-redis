@@ -112,20 +112,20 @@ We can scale this web application by launching multiple backend application cont
 ##### Create Player Table
 localhost:8083
 This will create the player table.
-![reate Player Table](https://github.com/navojha/docker-compose-flask-mysql-redis/blob/main/Screenshots/Table_Created.png?raw=true)
+![reate Player Table](https://github.com/navojha/dockerswarm-docker-compose-flask-mysql-redis/blob/main/Screenshots/Table_Created.png?raw=true)
 
 ##### Insert records in Player
     localhost:8083/Createplayer
     This End Point will use to enter the Player data.
-![Insert records in Player](https://github.com/navojha/docker-compose-flask-mysql-redis/blob/main/Screenshots/Create_player.png?raw=true)
+![Insert records in Player](https://github.com/navojha/dockerswarm-docker-compose-flask-mysql-redis/blob/main/Screenshots/Player_Registration.png?raw=true)
 
 #### Player Created
-![Player Created](https://github.com/navojha/docker-compose-flask-mysql-redis/blob/main/Screenshots/Player_created.png?raw=true)
+![Player Created](https://github.com/navojha/dockerswarm-docker-compose-flask-mysql-redis/blob/main/Screenshots/Player_Registered.png?raw=true)
 
 #### Get Player Detail
     http://localhost:8083/Getplayer
     This endpoint will Retrieve Identifier and Name from the MySQL and Retrieve Gold from Redis. 
-![Get Player Detail](https://github.com/navojha/docker-compose-flask-mysql-redis/blob/main/Screenshots/Get_Player.png?raw=true)
+![Get Player Detail](https://github.com/navojha/dockerswarm-docker-compose-flask-mysql-redis/blob/main/Screenshots/Player_Details.png?raw=true)
 
 #### Logs
 
